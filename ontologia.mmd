@@ -1,0 +1,38 @@
+flowchart TD
+    Animal["Animal"]
+
+    %% Jerarquía (es un)
+    Animal --> Mamifero["Mamífero"]
+    Animal --> Ave["Ave"]
+    Mamifero --> Carnivoro["Carnívoro"]
+    Mamifero --> Ungulado["Ungulado"]
+    Mamifero --> Elefante["Elefante"]
+    Carnivoro --> Guepardo["Guepardo"]
+    Carnivoro --> Tigre["Tigre"]
+    Ungulado --> Jirafa["Jirafa"]
+    Ungulado --> Cebra["Cebra"]
+    Ave --> Pinguino["Pingüino"]
+    Ave --> Albatros["Albatros"]
+
+    %% Características que definen cada clase
+    TienePelo(["TienePelo"]) -.->|R1| Mamifero
+    DaLeche(["DaLeche"]) -.->|R2| Mamifero
+    Vuela(["Vuela"]) -.->|R3| Ave
+    PoneHuevos(["PoneHuevos"]) -.->|R3| Ave
+    TienePlumas(["TienePlumas"]) -.->|R4| Ave
+    ComeCarne(["ComeCarne"]) -.->|R5| Carnivoro
+    TienePezunas(["TienePezuñas"]) -.->|R6| Ungulado
+
+    Leonado(["Leonado"]) -.->|R7| Guepardo
+    ManchasOscuras(["ManchasOscuras"]) -.->|R7| Guepardo
+    Leonado -.->|R8| Tigre
+    RayasNegras(["RayasNegras"]) -.->|R8| Tigre
+    CuelloLargo(["CuelloLargo"]) -.->|R9| Jirafa
+    ManchasOscuras -.->|R9| Jirafa
+    RayasNegras -.->|R10| Cebra
+    Nada(["Nada"]) -.->|R11| Pinguino
+    BlancoNegro(["BlancoNegro"]) -.->|R11| Pinguino
+    VuelaMuyBien(["VuelaMuyBien"]) -.->|R12| Albatros
+    TieneTrompa(["TieneTrompa"]) -.->|R13, R14| Elefante
+    OrejasGrandes(["OrejasGrandes"]) -.->|R14| Elefante
+    GranAltura(["GranAltura"]) -.->|R14| Elefante
